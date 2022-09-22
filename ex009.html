@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Nacionalidade</title>
+</head>
+<body>
+    <h1>Sistema de verificação de Nacionalidade</h1>
+    <p>Digite aqui onde você nasceu:</p>
+    <input type="text" id="nac" style="height: 30px; width: 50%">
+    <input type="submit" value="Enviar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        var captarNaci = ""
+
+        function verificar() {
+            captarNaci = document.getElementById('nac').value
+
+            if (captarNaci != 'Brasil') {
+                document.getElementById('res').innerHTML = `Você é estrangeiro(a)!`
+            } else {
+                res.innerHTML = `Você é Brasileiro(a)!`
+            }
+
+            
+        }
+        
+    </script>
+</body>
+</html>
