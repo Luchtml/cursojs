@@ -3,3 +3,6 @@ let v = function(x) {
 }
 
 console.log(v(5))
+
+
+//  UMA FUNÇÃO PODE ESTAR DENTRO DE UMA VARIAVEL
