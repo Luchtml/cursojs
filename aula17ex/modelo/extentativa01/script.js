@@ -1,7 +1,7 @@
-let lista = document.querySelector('select#flista')
-let valores = []
-let res = document.querySelector('div#res')
-let info = document.querySelector('option#info')
+const lista = document.querySelector('select#flista')
+const valores = []
+const res = document.querySelector('div#res')
+const info = document.querySelector('option#info')
 
 function adicionar() {
     const item = document.createElement('option')
@@ -29,5 +29,26 @@ function inLista(n, l) {
         return true
     } else {
         return false
+    }
+}
+
+    /* 1 - Mostrar total de números
+       2 - Mostrar o maior valor
+       3 - Mostrar o menor valor
+       4 - mostrar a soma dos valores 
+       5 - mostrar a média dos valores obs: mostrar somente 2 casas decimais!
+    */
+
+function pegarRegistro() {
+    const itemRes = document.createElement('p')
+    if (valores.length != 0) {
+        for(const pos in valores) {
+            res.appendChild(itemRes)
+            itemRes.innerHTML = `A posição ${pos} tem o valor ${valores[pos]}`
+        }
+
+
+    } else {
+        alert('Não há números registrados')
     }
 }
