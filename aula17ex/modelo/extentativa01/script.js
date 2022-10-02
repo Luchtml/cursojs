@@ -1,11 +1,11 @@
-const lista = document.querySelector('select#flista')
-const valores = []
-const res = document.querySelector('div#res')
-const info = document.querySelector('option#info')
+let lista = document.querySelector('select#flista')
+let valores = []
+let res = document.querySelector('div#res')
+let info = document.querySelector('option#info')
 
 function adicionar() {
-    const item = document.createElement('option')
-    const num = document.querySelector('input#fnum')
+    let item = document.createElement('option')
+    let num = document.querySelector('input#fnum')
     if (isNumero(num.value) && !inLista(num.value, valores)) {
         lista.appendChild(item)
         valores.push(Number(num.value))
@@ -32,21 +32,29 @@ function inLista(n, l) {
     }
 }
 
-    /* 1 - Mostrar total de números
-       2 - Mostrar o maior valor
-       3 - Mostrar o menor valor
-       4 - mostrar a soma dos valores 
-       5 - mostrar a média dos valores obs: mostrar somente 2 casas decimais!
-    */
-
 function pegarRegistro() {
-    const itemRes = document.createElement('p')
+    valores.sort
+    let soma = 0
+    let itemRes = document.createElement('p')
+    let ultimo = valores[valores.length - 1]
     if (valores.length != 0) {
-        for(const pos in valores) {
+        for(let pos in valores) {        
             res.appendChild(itemRes)
-            itemRes.innerHTML = `A posição ${pos} tem o valor ${valores[pos]}`
+            itemRes.innerHTML +=
+             `<strong>${valores[pos]}</strong>, `
         }
-
+        for (let i=0; i < valores.length;i++){
+            soma += valores[i]
+        }
+        itemRes.innerHTML += `<br><br>Foram adicionados <strong>${valores.length}</strong> números`
+        itemRes.innerHTML += 
+        `<br><br>A soma de todos os valores é <strong>${soma}</strong<br><br>`
+        itemRes.innerHTML += 
+        `O maior valor adicionado é o valor <strong>${ultimo}</strong><br><br>`
+        itemRes.innerHTML += 
+            `O menor valor adicionado é o valor <strong>${valores.shift(0)}</strong><br><br>`
+        itemRes.innerHTML += 
+        `A média dos valores é: <strong>${soma % valores.length}</strong>`
 
     } else {
         alert('Não há números registrados')
