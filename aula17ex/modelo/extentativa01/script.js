@@ -54,7 +54,7 @@ function pegarRegistro() {
         itemRes.innerHTML += 
             `O menor valor adicionado é o valor <strong>${valores.shift(0)}</strong><br><br>`
         itemRes.innerHTML += 
-        `A média dos valores é: <strong>${soma % valores.length}</strong>`
+        `A média dos valores é: <strong>${soma / valores.length}</strong>`
 
     } else {
         alert('Não há números registrados')
