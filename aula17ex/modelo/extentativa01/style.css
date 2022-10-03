@@ -23,6 +23,10 @@ section {
     width: 190px;
 }
 
+#rein {
+    display: none;
+}
+
 footer {
     color: rgb(255, 255, 255);
     text-align: center;
