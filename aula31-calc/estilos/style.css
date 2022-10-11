@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./wave.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+
+.redes {
+    display: flex;
+    list-style-type: none;
+    width: 2.5em;
+    flex-direction: column;
+}
+
+
+#menu img#hamb{
+    margin: 25px 150px 0px 0px;
+    display: flex;
+    align-self: flex-start;
+    min-height: 4vh;
+    margin-bottom: 70px;
+}
+
+#menu ul {
+    align-items: center;
+    justify-content: center;
+}
+
+
+#menu li {
+    visibility: hidden;
+    opacity: 0;
+    margin: 49px;
+}
+
+#menu:hover li {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+#menu:hover ul {
+    width: 80px;
+    background-color: #0d20773f;
+    border-radius: 14px;
+}
+
+#Linkedin {
+    opacity: 0;
+    transition: visibility 0s, opacity .3s linear;
+    transition: 0.8s;
+}
+
+#GitHub {
+    border-radius: 50%;
+    opacity: 0;
+    transition: visibility 0s, opacity .6s linear;
+    transition: 0.8s;
+}
+
+#Curriculo {
+    opacity: 0;
+    transition: visibility 0s, opacity .9s linear;
+    transition: 0.8s;
+}
+
+li#Linkedin:hover {
+    position: relative;
+    left: 7px;
+    bottom: 7px;
+    box-shadow: -6px 6px 6px #25252579;
+
+}
+li#GitHub:hover {
+    position: relative;
+    left: 7px;
+    bottom: 7px;
+    box-shadow: -6px 6px 6px #25252579;
+}
+li#Curriculo img:hover {
+    position: relative;
+    left: 7px;
+    bottom: 7px;
+    box-shadow: -6px 6px 6px #25252579;
+}
+
+
+#calc {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 16;
+    border-radius: 15px;
+    box-shadow:
+        1.6px 0.8px 1.3px rgba(0, 0, 0, 0.013),
+        3.4px 1.7px 2.9px rgba(0, 0, 0, 0.019),
+        5.8px 2.9px 4.9px rgba(0, 0, 0, 0.023),
+        8.7px 4.3px 7.4px rgba(0, 0, 0, 0.027),
+        12.5px 6.3px 10.8px rgba(0, 0, 0, 0.03),
+        17.7px 8.9px 15.4px rgba(0, 0, 0, 0.033),
+        25.1px 12.6px 21.9px rgba(0, 0, 0, 0.037),
+        36.5px 18.3px 31.8px rgba(0, 0, 0, 0.041),
+        56.3px 28.1px 48.4px rgba(0, 0, 0, 0.047),
+        100px 50px 80px rgba(0, 0, 0, 0.06);
+    margin-top: 26px;
+    max-width: 68vw;
+    height: 450px;
+    color: white;
+    background-color: #252525;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+
+div#titulo {
+    font-size: 16px;
+    padding: 10px;
+}
+
+div.operacoes {
+    background-color: rgba(150, 150, 150, 0.377);
+    text-align: right;
+    min-width: 118px;
+    min-height: 8vh;
+    padding: 19px;
+    margin: 5px;
+    border-radius: 6px;
+}
+
+
+.anterior {
+    color: rgba(255, 255, 255, 0.822);
+    padding: 0.2em;
+    overflow-wrap: break-word;
+    min-height: 1.6em;
+}
+
+.atual {
+    min-height: 1.6em;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0.2em;
+    overflow-wrap: break-word;
+}
+
+
+div.teclas {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: .5em;
+    height: 300px;
+}
+
+.operators, .funcoes {
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+#igual {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    background-color: #f1d557;
+}
+
+.fundo {
+
+}
+
+#bottom {
+    
+}
