@@ -6,56 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora JS</title>
     <link rel="stylesheet" href="estilos/style.css">
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.js" defer></script>
 </head>
-<body>
+<body class="delay-1">
     <nav id="menu">
         <img id="hamb" src="estilos/hamburguer.svg">
         <ul class="redes">
-            <li id="Linkedin">
-                <img class="redes" id="linkedin" src="estilos/linkedin.svg">
+            <a href="https://www.linkedin.com/in/luchtml/" target="_blank">
+                <li id="Linkedin">
+                    <img class="redes" id="linkedin" src="estilos/linkedin.svg">
+                    </li>
+            </a>
+            <a href="https://github.com/Luchtml" target="_blank">
+                <li id="GitHub">
+                    <img class="redes" id="github" src="estilos/github.svg">
                 </li>
-            <li id="GitHub">
-                <img class="redes" id="github" src="estilos/github.svg">
-            </li>
+            </a>
             <li id="Curriculo">
                 <img class="redes" id="curriculo" src="estilos/curriculo.svg">
             </li>
         </ul>
     </nav>
-    <section id="calc">
-        <div id="titulo">
+    <div id="calc">
             <h1>Calculadora</h1>
-        </div>
         <div class="operacoes">
-            <div class="anterior">
-                
-            </div>
-            <div class="atual">
-                
-            </div>
+            <div id="anterior"></div>
+            <div id="atual"></div>
         </div>
-        <div class="teclas">
-            <button class="funcoes">CE</button>
-            <button class="funcoes">C</button>
-            <button class="funcoes">DEL</button>
+        <div id="buttons-container">
+            <button class="operators">CE</button>
+            <button class="operators">C</button>
+            <button class="operators">DEL</button>
             <button class="operators">/</button>
-            <button class="operators">7</button>
-            <button class="operators">8</button>
-            <button class="operators">9</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
             <button class="operators">*</button>
-            <button class="operators">4</button>
-            <button class="operators">5</button>
-            <button class="operators">6</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
             <button class="operators">-</button>
-            <button class="operators">1</button>
-            <button class="operators">2</button>
-            <button class="operators">3</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
             <button class="operators">+</button>
-            <button class="operators">0</button>
-            <button class="operators">.</button>
-            <button class="operators" id="igual">=</button>
+            <button class="number">0</button>
+            <button class="number">.</button>
+            <button id="igual">=</button>
         </div>
-    </section>
+    </div>
 </body>
 </html>

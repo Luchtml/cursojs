@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap');
 * {
     padding: 0px;
     margin: 0px;
@@ -17,7 +17,14 @@ body {
     width: 100vw;
     height: 100vh;
     flex-wrap: wrap;
+    
 }
+
+.delay-1 {
+    transition-delay: 0.1s;
+    transition-duration: 1000ms;
+  }
+  
 
 
 .redes {
@@ -27,6 +34,9 @@ body {
     flex-direction: column;
 }
 
+.onNavHover {
+    background-image: url(./wave2.svg);
+}
 
 #menu img#hamb{
     margin: 25px 150px 0px 0px;
@@ -39,13 +49,14 @@ body {
 #menu ul {
     align-items: center;
     justify-content: center;
+    gap: 55px;
+    padding: 64px 34px;
 }
 
 
 #menu li {
     visibility: hidden;
     opacity: 0;
-    margin: 49px;
 }
 
 #menu:hover li {
@@ -80,17 +91,30 @@ body {
 }
 
 li#Linkedin:hover {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     position: relative;
-    left: 7px;
+    left: 37px;
     bottom: 7px;
+    width: 100px;
     box-shadow: -6px 6px 6px #25252579;
+    border-radius: 35px;
 
 }
 li#GitHub:hover {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: relative;
+    left: 37px;
+    bottom: 7px;
+    width: 100px;
     position: relative;
     left: 7px;
     bottom: 7px;
     box-shadow: -6px 6px 6px #25252579;
+    border-radius: 35px;
 }
 li#Curriculo img:hover {
     position: relative;
@@ -125,7 +149,7 @@ li#Curriculo img:hover {
     overflow: hidden;
 }
 
-div#titulo {
+h1 {
     font-size: 16px;
     padding: 10px;
 }
@@ -141,14 +165,14 @@ div.operacoes {
 }
 
 
-.anterior {
+#anterior {
     color: rgba(255, 255, 255, 0.822);
     padding: 0.2em;
     overflow-wrap: break-word;
     min-height: 1.6em;
 }
 
-.atual {
+#atual {
     min-height: 1.6em;
     font-size: 2em;
     font-weight: 700;
@@ -157,7 +181,7 @@ div.operacoes {
 }
 
 
-div.teclas {
+div#buttons-container {
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -166,13 +190,26 @@ div.teclas {
     height: 300px;
 }
 
-.operators, .funcoes {
+.operators, .del, .delete-all, .delete-atual, .number, #igual {
  border-radius: 4px;
  cursor: pointer;
+}
+
+.operators, .del, .delete-all, .delete-atual {
+    font-weight: 900;
 }
 
 #igual {
     grid-column-start: 3;
     grid-column-end: 5;
     background-color: #f1d557;
+}
+
+#buttons-container button:hover {
+    background-color: rgba(22, 22, 22, 0.486);
+    color: white;
+}
+
+#igual:hover {
+    background-color: rgb(28, 61, 88);
 }
