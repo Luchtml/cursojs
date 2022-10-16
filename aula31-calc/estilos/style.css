@@ -39,7 +39,6 @@ body {
 }
 
 #menu img#hamb{
-    margin: 25px 150px 0px 0px;
     display: flex;
     align-self: flex-start;
     min-height: 4vh;
