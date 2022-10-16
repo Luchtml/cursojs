@@ -31,7 +31,9 @@ class Calculadora {
     }
 
 //adicionar na tela metodos
-    
+    addDigit(digit) {
+        console.log(digit)
+    }
 
 }
 
@@ -46,7 +48,7 @@ buttons.forEach((btns) => {
     btns.addEventListener('click', (e) => {
         const value = e.target.innerText
         if (+value >= 0 || value === '.') {
-            console.log('its number ' + value)
+            calc.addDigit(value)
         } else {
             console.log('its op ' + value)
         }
