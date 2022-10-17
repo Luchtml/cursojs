@@ -24,15 +24,39 @@ for (let indice in links) {
 
 
 class Calculadora {
-    constructor(opAnterior, opAtual) {
-        this.opAnterior = opAnterior
-        this.opAtual = opAtual
-        this.oper
+    constructor(opAnteriorText, opAtualText) {
+        this.opAnteriorText = opAnterior
+        this.opAtualText = opAtual
+        this.oper = ''
     }
 
 //adicionar na tela metodos
     addDigit(digit) {
-        console.log(digit)
+        if(digit === '.' && this.opAtualText.innerText.includes('.')) {
+            return
+        }
+        this.opAtual = digit
+        this.atualizarTela()
+    }
+
+
+// adicionar na tela metodos de op
+
+    operatProcess (operation) {
+
+        if(this.opAtualText.innerText.includes(operation)){
+            return
+        }
+
+        this.opAtualText.innerText += operation
+    }
+
+
+
+//atualizar tela
+
+    atualizarTela(){
+        this.opAtualText.innerText += this.opAtual;
     }
 
 }
@@ -50,7 +74,7 @@ buttons.forEach((btns) => {
         if (+value >= 0 || value === '.') {
             calc.addDigit(value)
         } else {
-            console.log('its op ' + value)
+            calc.operatProcess(value)
         }
     })
 })
