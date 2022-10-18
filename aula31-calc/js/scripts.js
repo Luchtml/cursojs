@@ -25,48 +25,76 @@ for (let indice in links) {
 
 class Calculadora {
     constructor(opAnteriorText, opAtualText) {
-        this.opAnteriorText = opAnterior
-        this.opAtualText = opAtual
-        this.oper = ''
+        this.opAnteriorText = opAnteriorText
+        this.opAtualText = opAtualText
+        this.opAtual = ''
     }
 
 //adicionar na tela metodos
     addDigit(digit) {
-        if(digit === '.' && this.opAtualText.innerText.includes('.')) {
+
+        if (digit === '.' && opAtualText.innerText.includes('.')) {
             return
         }
         this.opAtual = digit
-        this.atualizarTela()
+        this.attTela()
     }
 
 
 // adicionar na tela metodos de op
+    addOp(operation) {
+        let opValue
+        let anterior = +this.opAnteriorText.innerText.split(' ')[0]
+        let atual =  +this.opAtualText.innerText
 
-    operatProcess (operation) {
+        switch (operation) {
+            case '+':
+                opValue = anterior / atual
+                this.attTela(opValue, operation, atual, anterior)
+            break
+            case '-':
+                opValue = anterior / atual
+                this.attTela(opValue, operation, atual, anterior)
+            break
+            case '*':
+                opValue = anterior / atual
+                this.attTela(opValue, operation, atual, anterior)
+            break
+            case '/':
+                opValue = anterior / atual
+                this.attTela(opValue, operation, atual, anterior)
+            break
 
-        if(this.opAtualText.innerText.includes(operation)){
-            return
+            default:
+                return
         }
 
-        this.opAtualText.innerText += operation
+
     }
 
 
-
-//atualizar tela
-
-    atualizarTela(){
-        this.opAtualText.innerText += this.opAtual;
+//atualizar tela   
+    attTela(opValue= null, operation = null, atual=null, anterior=null) {
+        if(opValue===null){
+            this.opAtualText.innerText += this.opAtual
+        } else {
+            if (anterior === 0) {
+                opValue = atual
+            }
+            this.opAnteriorText.innerText = `${opValue} ${operation}`
+            this.opAtualText.innerText = ''
+        }
+        
     }
 
 }
 
-const opAnterior = document.querySelector('#anterior')
-const opAtual = document.querySelector('#atual')
+const opAnteriorText = document.querySelector('#anterior')
+const opAtualText = document.querySelector('#atual')
 const buttons = document.querySelectorAll('#buttons-container button')
 
 
-const calc = new Calculadora()
+const calc = new Calculadora(opAnteriorText, opAtualText)
 
 buttons.forEach((btns) => {
     btns.addEventListener('click', (e) => {
@@ -74,7 +102,7 @@ buttons.forEach((btns) => {
         if (+value >= 0 || value === '.') {
             calc.addDigit(value)
         } else {
-            calc.operatProcess(value)
+            calc.addOp(value)
         }
     })
 })
