@@ -6,16 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Javascript</title>
     <link rel="stylesheet" href="estilos/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="js/scripts.js" defer></script>
 </head>
 <body>
+    <header>
+        <h1>Minha loja 1.0</h1>
+    </header>
+<main>
+        <div class="title">
+            <h2>Produtos</h2>
+            <span>Lista de produtos da minha loja.</span>
+        </div>
 
-    
-    <div class="card">
-        <h1>Controle de produtos</h1>
+        <div class="card">
+            <div class="lineInput">
+                <label for="produto">Produto</label>
+                <input type="text" id="produto" placeholder="Nome do produto">
+            </div>
 
-        <button onclick="produto.adicionar()">Adicionar</button>
-        <button onclick="produto.excluir()">Excluir</button>
-    </div>
+            <div class="lineInput">
+                <label for="valor">Preço</label>
+                <input type="text" id="preco" placeholder="Valor do produto">
+            </div>
+            <button onclick="produto.salvar()" id="btnSalv">
+                <span class="material-symbols-outlined">add</span>
+            </button>
+            <button onclick="produto.cancelar()">
+                <span class="material-symbols-outlined">
+                remove
+                </span>
+            </button>
+        </div>
+        <div class="content">
+            <table border="1">
+                <thead>
+                    <th class="center">ID</th>
+                    <th>Produto</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
+                </thead>
+
+            <tbody id="tbody">
+            </tbody>
+            </table>
+        </div>
+</main>
 </body>
 </html>
